@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Super Mario 64</title>
+
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: black;
+        height: 100%;
+        width: 100%;
+    }
+    #game {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100vw;
+        height: 100vh;
+    }
+</style>
+
+</head>
+<body>
+
+<div id="game"></div>
+
+<script>
+    // EmulatorJS Config
+    EJS_player = "#game";
+    EJS_core = "n64";
+    EJS_color = "#000000";
+    EJS_START_ONLOAD = true;
+
+    // EmulatorJS Data
+    EJS_pathtodata = "https://cdn.jsdelivr.net/gh/a456pur/seraph@81f551ca0aa8e3d6018d32d8ac5904ac9bc78f76/storage/emulatorjs/data";
+
+    // Game ROM
+    EJS_gameUrl = "https://cdn.jsdelivr.net/gh/bubbls/clsm64@139e09e38eb3e7783095eee30fdf75b18ee59e02/Super%20Mario%2064%20(USA).zip";
+
+    // Load emulator
+    function loadGame() {
+        let s1 = document.createElement("script");
+        s1.src = EJS_pathtodata + "/loader.js";
+        document.body.appendChild(s1);
+    }
+    loadGame();
+</script>
+
+</body>
+</html>
